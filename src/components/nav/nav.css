@@ -1,0 +1,80 @@
+:root {
+	--text-header: #312f39;
+	--sub-background: #a6b3c8;
+	--background-color: #0936c5;
+	--btn: #0936c5;
+	--text-white: #eef2f6;
+	--text-white-mute: #7986ae;
+}
+a {
+	text-decoration: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.nav {
+	height: 80px;
+	display: flex;
+	align-items: center;
+	padding: 0px 64px;
+	background: var(--background-color);
+}
+
+.nav .branding {
+	flex: 2;
+	font-size: 1.4rem;
+	font-weight: 500;
+	color: #eef2f6;
+}
+
+.nav .menu {
+	flex: 3;
+	display: flex;
+	height: 80px;
+	width: 100vw;
+	align-items: center;
+	justify-content: flex-end;
+}
+.nav .menu li {
+	padding-top: 10px;
+	margin-right: 2.5rem;
+}
+.nav .menu li a {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--text-white);
+}
+.btn {
+	background-color: transparent;
+	border: 1px solid var(--text-white);
+	border-radius: 2px;
+	padding: 4px 14px;
+}
+
+@media screen and (max-width: 570px) {
+	.nav {
+		padding: 0px 32px;
+	}
+	.nav .menu li:last-child {
+		margin-right: 1rem;
+	}
+}
+@media screen and (max-width: 520px) {
+	.nav {
+		padding: 0px 16px;
+	}
+	.nav .menu li a {
+		font-size: 16px;
+	}
+	.nav .menu li:last-child {
+		margin-right: 12px;
+	}
+}
+@media screen and (max-width: 440px) {
+	.nav {
+		display: none;
+	}
+}

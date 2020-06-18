@@ -1,0 +1,28 @@
+:root {
+	--text-header: #312f39;
+	--sub-background: #a6b3c8;
+	--background-color: #0936c5;
+	--btn: #0936c5;
+	--text-white: #eef2f6;
+	--text-white-mute: #7986ae;
+}
+.parcel-container {
+	width: 80%;
+	margin: 0px auto;
+}
+.parcel-container .form-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.parcel-container .form-header h1 {
+	color: var(--background-color);
+}
+.inline-form {
+	display: flex;
+}
+
+@media screen and (max-width: 420px) {
+	.parcel-container {
+		width: 94%;
+	}
+}
