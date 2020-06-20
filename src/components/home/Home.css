@@ -19,39 +19,77 @@
 	width: 100%;
 	background-color: var(--background-color);
 }
+
 .showcase {
-	height: 280px;
-	width: 60%;
-	margin: 0px 64px;
+	height: 320px;
+	width: 94%;
+	display: flex;
+	/* justify-content: space-between; */
+	margin: 0px auto;
+}
+.showcase-text {
+	flex: 3;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
+	height: 320px;
+	margin-right: 2rem;
 }
-.showcase .showcase-header {
+
+.showcase-text .showcase-header {
 	color: var(--text-white);
 	font-size: 2rem;
 }
-.showcase .showcase-text {
-	color: var(--text-white);
-	font-size: 1rem;
-}
-.showcase .showcase-text {
-	max-width: 24rem;
+.showcase-text .paragraph {
+	max-width: 30rem;
+	color: #cce7f3;
 }
 .showcase .create-parcel {
-	width: 20%;
-	margin: 8px 0px;
+	width: 40%;
 	border: none;
 	padding: 8px 0px;
-	border-radius: 5px;
+	background-color: transparent;
+	border: 1px solid var(--text-white);
+	outline: none;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.showcase .track-parcel {
+	width: 40%;
+	text-align: center;
+	border: none;
+	padding: 8px 0px;
+	background-color: var(--text-white);
+	border: 1px solid var(--background-color);
+	outline: none;
+}
+.showcase .create-parcel a {
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 500;
+}
+.showcase .track-parcel a {
 	color: var(--background-color);
 	font-size: 1rem;
 	font-weight: 500;
 }
+.showcase-image {
+	flex: 2;
+	justify-self: flex-end;
+	height: 320px;
+	display: flex;
+	justify-content: center;
+}
+.showcase-image img {
+	height: 320px;
+	width: 320px;
+}
 .why {
 	text-align: center;
 	color: var(--text-white);
+	margin-bottom: 10px;
+	height: 100px;
 }
 .why-box {
 	display: flex;
@@ -59,6 +97,7 @@
 	align-items: center;
 	padding: 8px 8px;
 	text-align: center;
+	margin-bottom: 10px;
 }
 
 .why-box div img {
@@ -107,7 +146,7 @@
 }
 .home .why-main {
 	position: relative;
-	top: -50px;
+	top: -60px;
 	width: 60%;
 	display: flex;
 	justify-content: space-between;
@@ -144,21 +183,114 @@
 	color: var(--text-white);
 }
 @media screen and (max-width: 880px) {
-	.showcase .create-parcel {
-		width: 30%;
-		font-size: 1rem;
-		font-weight: 500;
-	}
 	.home .why-main {
 		width: 80%;
 	}
 }
+@media screen and (max-width: 700px) {
+	.showcase-text .showcase-header {
+		font-size: 1.6rem;
+	}
+}
 @media screen and (max-width: 650px) {
+	.showcase-text {
+		flex: 4;
+		height: 280px;
+		justify-content: center;
+	}
+	.showcase-image {
+		flex: 1;
+	}
+	.showcase-text .showcase-header {
+		font-size: 1.6rem;
+	}
+	.showcase .create-parcel {
+		padding: 4px 0px;
+	}
+	.showcase .track-parcel {
+		padding: 4px 0px;
+	}
+	.showcase-image {
+		align-items: center;
+	}
+	.showcase-image {
+		height: 280px;
+	}
+	.showcase-image img {
+		height: 280px;
+		width: 280px;
+	}
+	.why {
+		margin-top: -20px;
+		height: 160px;
+	}
+	.home .why-main {
+		top: -70px;
+		width: 100%;
+		justify-content: space-around;
+	}
+	.why-box {
+		padding: 8px 4px;
+	}
+}
+@media screen and (max-weight: 620px) {
+}
+@media screen and (max-width: 560px) {
+	.showcase {
+		height: 320px;
+		width: 94%;
+		display: flex;
+		/* justify-content: space-between; */
+		margin-top: 10px !important;
+	}
+	.showcase-text .showcase-header {
+		font-size: 1.4rem;
+	}
+	.showcase .create-parcel {
+		width: 60%;
+	}
+	.showcase .track-parcel {
+		width: 60%;
+	}
+}
+@media screen and (max-width: 500px) {
 	.jumbotron {
-		height: 400px;
+		height: 480px;
 	}
 	.showcase {
-		margin: 20px 32px 0px 32px;
+		height: 400px;
+		align-content: center;
+	}
+	.showcase-text {
+		flex: 4;
+		height: 400px;
+		margin-top: 20px;
+		margin-right: 1.2rem;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	.showcase-text .showcase-header {
+		font-size: 1rem;
+	}
+	.showcase .create-parcel {
+		width: 80%;
+		padding: 4px 0px;
+		margin-bottom: 8px;
+	}
+	.showcase .track-parcel {
+		width: 80%;
+		padding: 4px 0px;
+	}
+	.showcase-image {
+		flex: 1;
+		height: 400px;
+		align-items: flex-start;
+		justify-content: flex-end;
+	}
+	.showcase-image img {
+		height: 320px;
+		width: 220px;
 	}
 	.why {
 		display: none;
@@ -166,35 +298,63 @@
 	.why-hidden {
 		display: block;
 	}
-
 	.home .why-main {
-		position: relative;
 		top: 0px;
-		width: 60%;
+		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.home .why-main > div {
-		height: 160px;
-		width: 160px;
-		z-index: 0;
-		margin: 10px 0px;
-	}
-}
-
-@media screen and (max-width: 490px) {
-	.showcase .showcase-header {
-		font-size: 1.5rem;
-	}
-	.showcase .create-parcel {
-		width: 60%;
-	}
-	.steps h2 {
-		margin: 0px 1rem;
-	}
 }
 @media screen and (max-width: 400px) {
-	.steps h2 {
-		font-size: 1rem;
+	.showcase-text {
+		margin-right: 1rem;
+	}
+	.showcase-image {
+		width: 200px;
+		align-items: flex-start;
+	}
+	.showcase-image img {
+		height: 320px;
+		width: 200px;
+	}
+}
+@media screen and (max-width: 380px) {
+	.jumbotron {
+		height: 400px;
+	}
+	.showcase {
+		height: 320px;
+		/* align-content: center; */
+	}
+	.showcase-text {
+		height: 320px;
+		margin-top: 0px;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	.showcase-image {
+		height: 320px;
+		width: 100px;
+		align-items: flex-start;
+	}
+	.showcase-image img {
+		height: 160px;
+		width: 100px;
+	}
+	.showcase .create-parcel {
+		width: 50%;
+		margin-bottom: 4px;
+	}
+	.showcase .track-parcel {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 330px) {
+	.showcase .create-parcel {
+		width: 100%;
+	}
+	.showcase .track-parcel {
+		width: 100%;
 	}
 }

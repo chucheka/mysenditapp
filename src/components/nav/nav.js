@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { Menu, Dropdown, Button } from 'antd';
 import './nav.css';
+import Logo from '../../img/logo.png';
 export const nav = () => {
 	const menu = (
 		<Menu>
@@ -18,7 +19,7 @@ export const nav = () => {
 	return (
 		<div className="nav">
 			<div class="branding">
-				<span>SendIt</span>
+				<img src={Logo} />
 			</div>
 			<ul className="menu">
 				<li>

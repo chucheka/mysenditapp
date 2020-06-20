@@ -5,7 +5,7 @@ import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { Menu, Dropdown, Button, Drawer, Divider } from 'antd';
 import './SmallNavBar.css';
 import { MenuOutlined } from '@ant-design/icons';
-
+import Logo from '../../img/logo.png';
 export const SmallNavBar = () => {
 	const [ visible, setVisible ] = useState(false);
 	const showDrawer = () => {
@@ -31,10 +31,15 @@ export const SmallNavBar = () => {
 	return (
 		<div className="navbar">
 			<div class="nav-branding">
-				<span>SendIt</span>
+				<img src={Logo} />
 			</div>
 			<div className="nav-menu-icon">
-				<MenuOutlined onClick={showDrawer} />
+				<MenuOutlined
+					onClick={showDrawer}
+					style={{
+						float: 'right'
+					}}
+				/>
 				<Drawer title="SendIt" placement="top" closable={true} onClose={onClose} visible={visible}>
 					<div className="nav-menu">
 						<div className="menu-link">

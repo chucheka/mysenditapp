@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Nav from '../nav/nav';
-import { Typography } from 'antd';
 import SmallNavBar from '../nav/SmallNavBar';
 import Truck from '../../img/black-truck.png';
 import Save from '../../img/save.png';
@@ -11,7 +10,9 @@ import Parcel from '../../img/parcel.png';
 import Package from '../../img/package.png';
 import PriceTag from '../../img/price-tag.png';
 import Card from '../../img/card.png';
+import Delivery from '../../img/deliveryman.png';
 import Footer from '../../common/Footer';
+import { Typography, Row, Col } from 'antd';
 const { Title, Paragraph } = Typography;
 export default function HomePage() {
 	return (
@@ -20,16 +21,24 @@ export default function HomePage() {
 				<Nav />
 				<SmallNavBar />
 				<div className="showcase">
-					<h2 className="showcase-header">Deliver your parcels fast and safe</h2>
-					<p className="showcase-text">
-						We have the solution,with SendIt you can schedule pick up and delivery of your parcels,and have
-						it delivered on time
-					</p>
-					<button className="create-parcel">
-						<Link to="/parcels/create">Send Parcel</Link>
-					</button>
+					<div className="showcase-text">
+						<h2 className="showcase-header">Deliver your parcels fast and safe</h2>
+						<p className="paragraph">
+							With sendit, you can order pick up and delivery of your parcels,and have it delivered on
+							time
+						</p>
+						<button className="create-parcel">
+							<Link to="/parcels/create">Send Parcel</Link>
+						</button>
+						<button className="track-parcel">
+							<Link to="/parcels/track">Track Parcel</Link>
+						</button>
+					</div>
+					<div className="showcase-image">
+						<img src={Delivery} />
+					</div>
 				</div>
-				<h2 className="why">why choose us</h2>
+				<h2 className="why">why choose us</h2> *
 			</div>
 			<h2 className="why-hidden">Why choose us</h2>
 			<div className="why-main">

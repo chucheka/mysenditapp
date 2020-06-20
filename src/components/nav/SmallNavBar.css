@@ -11,17 +11,16 @@
 	height: 80px;
 	align-items: center;
 	padding: 0px 2rem;
-	/* background: var(--background-color); */
 }
 .navbar .nav-branding {
+	height: 80px;
 	flex: 3;
-	padding-left: 12px;
-	font-size: 1.4rem;
-	font-weight: 500;
-	color: #eef2f6;
+}
+.navbar .nav-branding img {
+	height: 80px;
 }
 .navbar .nav-menu-icon {
-	display: inline-block;
+	flex: 1;
 	font-size: 20px;
 	color: var(--text-white);
 }
@@ -39,7 +38,7 @@
 	font-size: 1rem;
 	font-weight: 500;
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 500px) {
 	.navbar {
 		display: flex;
 	}
