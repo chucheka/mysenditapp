@@ -2,6 +2,10 @@
 	"name": "myparcel",
 	"version": "0.1.0",
 	"private": true,
+	"engines": {
+		"npm": "6.13.0",
+		"node": "10.16.3"
+	},
 	"homepage": "https://ucheka22.github.io/mysenditapp",
 	"dependencies": {
 		"@ant-design/icons": "^4.2.1",
@@ -27,16 +31,8 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	},
 	"devDependencies": {
 		"gh-pages": "^3.0.0",
