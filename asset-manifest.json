@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/mysenditapp/static/css/main.46ec6f3d.chunk.css",
+    "main.js": "/mysenditapp/static/js/main.07f9c44b.chunk.js",
+    "main.js.map": "/mysenditapp/static/js/main.07f9c44b.chunk.js.map",
+    "runtime-main.js": "/mysenditapp/static/js/runtime-main.906ad0fb.js",
+    "runtime-main.js.map": "/mysenditapp/static/js/runtime-main.906ad0fb.js.map",
+    "static/css/2.4deadad5.chunk.css": "/mysenditapp/static/css/2.4deadad5.chunk.css",
+    "static/js/2.516cb2ef.chunk.js": "/mysenditapp/static/js/2.516cb2ef.chunk.js",
+    "static/js/2.516cb2ef.chunk.js.map": "/mysenditapp/static/js/2.516cb2ef.chunk.js.map",
+    "index.html": "/mysenditapp/index.html",
+    "precache-manifest.bdec79f566d431e8b8360bee61ac2858.js": "/mysenditapp/precache-manifest.bdec79f566d431e8b8360bee61ac2858.js",
+    "service-worker.js": "/mysenditapp/service-worker.js",
+    "static/css/2.4deadad5.chunk.css.map": "/mysenditapp/static/css/2.4deadad5.chunk.css.map",
+    "static/css/main.46ec6f3d.chunk.css.map": "/mysenditapp/static/css/main.46ec6f3d.chunk.css.map",
+    "static/js/2.516cb2ef.chunk.js.LICENSE.txt": "/mysenditapp/static/js/2.516cb2ef.chunk.js.LICENSE.txt",
+    "static/media/card.png": "/mysenditapp/static/media/card.7454bc72.png",
+    "static/media/deliveryman.png": "/mysenditapp/static/media/deliveryman.cc41b626.png",
+    "static/media/package.png": "/mysenditapp/static/media/package.9a9ea6d9.png",
+    "static/media/parcel.png": "/mysenditapp/static/media/parcel.5008d2bc.png",
+    "static/media/price-tag.png": "/mysenditapp/static/media/price-tag.4f72509e.png",
+    "static/media/save.png": "/mysenditapp/static/media/save.2d6e8218.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.906ad0fb.js",
+    "static/css/2.4deadad5.chunk.css",
+    "static/js/2.516cb2ef.chunk.js",
+    "static/css/main.46ec6f3d.chunk.css",
+    "static/js/main.07f9c44b.chunk.js"
+  ]
+}
