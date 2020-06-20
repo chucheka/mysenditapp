@@ -22,23 +22,6 @@ import { CreateParcel } from './components/parcel/CreateParcel';
 const { Content, Footer } = Layout;
 
 function App({ auth }) {
-	// Create A LAYOUT OF THE APP
-	// CONFIGURE NOTIFICATION
-	// Load current user when component mounts
-	// Log out user
-
-	// let decodedToken;
-	// if (localStorage.ACCESS_TOKEN) {
-	// 	decodedToken = jwt_decode(localStorage.ACCESS_TOKEN);
-	// 	const currentTime = Date.now() / 1000;
-	// 	if (decodedToken.exp < currentTime) {
-	// 		localStorage.removeItem('ACCESS_TOKEN');
-	// 		history.push('/auth/signin');
-	// 	} else {
-	// 		console.log(decodedToken);
-	// 	}
-	// }
-
 	return (
 		<div>
 			<div>
