@@ -12,7 +12,7 @@ import PriceTag from '../../img/price-tag.png';
 import Card from '../../img/card.png';
 import Delivery from '../../img/deliveryman.png';
 import Footer from '../../common/Footer';
-import { Typography, Row, Col } from 'antd';
+import { Typography } from 'antd';
 const { Title, Paragraph } = Typography;
 export default function HomePage() {
 	return (
@@ -28,10 +28,10 @@ export default function HomePage() {
 							time
 						</p>
 						<button className="create-parcel">
-							<Link to="/parcels/create">Send Parcel</Link>
+							<Link to="/parcel/create">Send Parcel</Link>
 						</button>
 						<button className="track-parcel">
-							<Link to="/parcels/track">Track Parcel</Link>
+							<Link to="/parcel/track">Track Parcel</Link>
 						</button>
 					</div>
 					<div className="showcase-image">
@@ -65,14 +65,8 @@ export default function HomePage() {
 				</div>
 			</div>
 			<div className="steps">
-				<h2>4 Simple Steps To Send With Us</h2>
-				<div className="step">
-					<div className="circle">
-						<img src={Parcel} />
-					</div>
-					<h3>Packaging</h3>
-					<p>Use your own packaging or let us choose the best package for your parcel</p>
-				</div>
+				<h2>3 Simple Steps To Send With Us</h2>
+
 				<div className="step">
 					<div className="circle">
 						<img src={PriceTag} />

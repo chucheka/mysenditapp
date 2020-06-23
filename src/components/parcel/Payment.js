@@ -8,7 +8,7 @@ import Footer from '../../common/Footer';
 import './Parcel.css';
 const { Step } = Steps;
 
-export const CreateParcel = ({ history }) => {
+export const Payment = ({ history }) => {
 	const handleSubmit = (values) => {
 		console.log(values);
 	};
@@ -20,22 +20,22 @@ export const CreateParcel = ({ history }) => {
 		<Fragment>
 			<div className="stages">
 				<Steps size="small" current={1}>
-					<Step status="process" title="Details" />
-					<Step status="wait" title="Payment" />
+					<Step title="Details" />
+					<Step status="process" title="Payment" />
 					<Step status="wait" title="Done" />
 				</Steps>
 			</div>
 			<div className="parcel-container">
 				<div className="form-header">
-					<h1>Schedule Pick Up</h1>
-					<span>Kindly fill the form correctly</span>
+					<h1>Make Payment</h1>
+					<span>Kindly fill in your payment details</span>
 				</div>
 				<Form
 					name="parcel_form"
 					className="parcel-form"
 					layout="horizontal"
 					onFinish={handleSubmit}
-					size="middle"
+					size="large"
 				>
 					<Form.Item name="pickup_address">
 						<Input placeholder="Pick-up address" />
@@ -147,7 +147,7 @@ export const CreateParcel = ({ history }) => {
 								fontWeight: '500'
 							}}
 						>
-							Schedule Pick Up
+							Make Payment
 						</Button>
 					</Form.Item>
 				</Form>
@@ -157,7 +157,7 @@ export const CreateParcel = ({ history }) => {
 	);
 };
 
-CreateParcel.propTypes = {
+Payment.propTypes = {
 	prop: PropTypes
 };
 
@@ -165,4 +165,4 @@ const mapStateToProps = (state) => ({
 	parcel: state.parcel
 });
 
-export default connect(mapStateToProps)(withRouter(CreateParcel));
+export default connect(mapStateToProps)(withRouter(Payment));

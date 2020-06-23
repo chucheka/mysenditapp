@@ -1,0 +1,94 @@
+:root {
+	--text-header: #312f39;
+	--sub-background: #a6b3c8;
+	--background-color: #0936c5;
+	--btn: #0936c5;
+	--text-white: #eef2f6;
+	--text-white-mute: #7986ae;
+}
+
+.container {
+	width: 100vw;
+	height: 120vh;
+	display: flex;
+	justify-content: center;
+	background-color: var(--background-color);
+}
+.container .main {
+	width: 60%;
+}
+.container .main .nav {
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.container .main .nav .menu .text {
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 500;
+}
+.container .main .nav .menu .btn {
+	display: inline-block;
+	margin-left: 10px;
+	width: 4.8rem;
+	padding: 4px 12px;
+	text-align: center;
+	background-color: #333;
+}
+.container .main .nav .menu .btn a {
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 400;
+}
+.container .main .header {
+	text-align: center;
+	margin-bottom: 20px;
+	color: var(--text-white);
+}
+.container .main .form {
+	background-color: var(--text-white);
+	padding: 40px;
+	border-radius: 8px;
+	height: auto;
+}
+
+@media screen and (max-width: 600px) {
+	.container .main {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.container .main {
+		width: 90%;
+	}
+	.container .main .form {
+		padding: 20px;
+	}
+}
+@media screen and (max-width: 350px) {
+	.container .main .nav img {
+		height: 70px;
+	}
+	.container .main .nav .menu .btn {
+		display: inline-block;
+		margin-left: 10px;
+		width: 4rem;
+		padding: 2px 8px;
+	}
+	.container .main .header {
+		font-size: 20px;
+	}
+	.container .main .form {
+		background-color: var(--text-white);
+		border-radius: 8px;
+		height: auto;
+	}
+	.field {
+		height: 36px;
+		margin: 10px 0px;
+	}
+	.container {
+		height: 120vh;
+	}
+}

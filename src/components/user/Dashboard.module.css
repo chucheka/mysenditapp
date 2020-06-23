@@ -1,0 +1,204 @@
+:root {
+	--text-header: #312f39;
+	--sub-background: #a6b3c8;
+	--background-color: #0936c5;
+	--btn: #1890ff;
+	--text-white: #eef2f6;
+	--text-white-mute: #7986ae;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.container {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-color: var(--background-color);
+}
+.container .main {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+}
+.container .main .nav {
+	display: flex;
+	height: 80px;
+	justify-content: space-between;
+	align-items: center;
+}
+.container .main .nav .logout {
+	width: 6rem;
+	background-color: #333;
+	padding: 4px 8px;
+	text-align: center;
+}
+.container .main .nav .logout:hover {
+	background-color: #eb002a;
+}
+.container .main .nav .logout a {
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 500;
+}
+.container .main > div {
+	margin-bottom: 40px;
+}
+.container .main .showcase {
+	height: 320px;
+	background-color: #fff;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.container .main .showcase .one {
+	display: flex;
+	justify-content: space-between;
+}
+.container .main .showcase .one .text h2 {
+	color: var(--text-header);
+	font-size: 1.6rem;
+	font-weight: 500;
+}
+.container .main .showcase .one .package img {
+	height: 80px;
+	width: 80px;
+}
+.container .main .showcase .two {
+	width: 60%;
+	display: flex;
+	justify-content: flex-start;
+}
+.container .main .showcase .two span {
+	display: inline-block;
+	padding: 8px 12px;
+	text-align: center;
+	background: #ddd;
+	font-size: 1rem;
+	font-weight: 500;
+	color: var(--btn);
+}
+
+.container .main .showcase .two span:first-child {
+	margin-right: 2rem;
+}
+.container .main .showcase .three {
+	width: 80%;
+	display: flex;
+}
+.container .main .showcase .three div {
+	width: 20%;
+	background-color: var(--btn);
+	color: #eef2f6;
+	text-align: center;
+	padding: 8px 0px;
+}
+.container .main .showcase .three div:nth-child(1) {
+	margin-right: 16px;
+}
+.container .main .showcase .three div:nth-child(2) {
+	margin-right: 16px;
+}
+.container .main .track {
+	width: 100%;
+	display: flex;
+}
+.track input {
+	flex: 4;
+	margin-right: 1rem;
+	border: none;
+	outline: none;
+	padding: 8px 14px;
+	font-weight: 500;
+	font-size: 1rem;
+}
+.track input::placeholder {
+	font-weight: 500;
+	font-size: 1rem;
+}
+.track button {
+	flex: 1;
+	background: var(--btn);
+	color: #fff;
+	font-size: 1rem;
+	font-family: 600;
+	border: none;
+	outline: none;
+	padding: 8px 14px;
+}
+.badge {
+	display: inline-block;
+	width: 26px;
+	border-radius: 50%;
+	background: #eef2f6;
+	color: var(--btn);
+	padding: 2px;
+	text-align: center;
+}
+.courierType {
+	height: 40px;
+	width: 40px;
+}
+.button {
+	font-size: 1rem;
+	font-weight: 500;
+}
+.button:hover {
+	background-color: #eb002a;
+}
+@media screen and (max-width: 900px) {
+	.container .main .showcase .three div {
+		width: 28%;
+		padding: 4px 0px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.container .main .showcase .two {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 720px) {
+	.container .main {
+		width: 90%;
+	}
+	.container .main .showcase {
+		height: 360px;
+		padding: 20px;
+	}
+}
+@media screen and (max-width: 560px) {
+	.container .main {
+		width: 94%;
+	}
+	.track input {
+		flex: 3;
+	}
+	.track button {
+		flex: 2;
+	}
+}
+@media screen and (max-width: 560px) {
+	.cancel {
+		display: none;
+	}
+	.courierType {
+		height: 30px;
+		width: 30px;
+	}
+	.container .main .showcase .two {
+		width: 90%;
+	}
+	.container .main .showcase .three div {
+		width: 30%;
+	}
+}
+@media screen and (max-width: 420px) {
+	.container .main .showcase .two {
+		width: 96%;
+	}
+	.container .main .showcase .two span:first-child {
+		margin-right: 1rem;
+	}
+}

@@ -13,12 +13,15 @@ import SigninPage from './components/auth/SigninPage';
 import ResetPasswordPage from './components/auth/ResetPasswordPage';
 import CreatePasswordPage from './components/auth/CreatePasswordPage';
 import Practice from './components/Practice';
-import UserDashBoard from './components/user/UserDashBoard';
+import Dashboard from './components/user/Dashboard';
 import RiderDashboard from './components/rider/RiderDashboard';
 import AdminDashboard from './components/admin/AdminDashboard';
 import { login } from './middlewares/auth';
 import { Role } from './common/Role';
 import { CreateParcel } from './components/parcel/CreateParcel';
+import { Payment } from './components/parcel/Payment';
+import { Calculator } from './components/parcel/Calculator';
+import NotFound from './common/NotFound';
 const { Content, Footer } = Layout;
 
 function App({ auth }) {
@@ -28,16 +31,19 @@ function App({ auth }) {
 				<div className="App">
 					<Switch>
 						<Route exact path="/" component={HomePage} />
-						<Route path="/practice" component={Practice} />
 						<Route path="/auth/signin" component={SigninPage} />
 						<Route path="/auth/signup" component={SignupPage} />
+						<Route path="/parcel/create" component={CreateParcel} />
+						<Route path="/payment" component={Payment} />
+						<Route path="/users/:userId/dashboard" component={Dashboard} />
+						<Route path="/calculate" component={Calculator} />
 						<Route path="/users/resetPassword" component={ResetPasswordPage} />
 						<Route path="/users/changePassword" component={CreatePasswordPage} />
 						<PrivateRoute
 							auth={auth}
 							roles={[ Role.User ]}
-							path="/user/dashboard"
-							component={UserDashBoard}
+							path="/users/:userId/dashboard"
+							component={Dashboard}
 						/>
 						<PrivateRoute
 							auth={auth}
@@ -57,6 +63,7 @@ function App({ auth }) {
 							path="/admin/dashboard"
 							component={AdminDashboard}
 						/>
+						<Route component={NotFound} />
 					</Switch>
 				</div>
 			</div>
