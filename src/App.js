@@ -22,6 +22,8 @@ import { CreateParcel } from './components/parcel/CreateParcel';
 import { Payment } from './components/parcel/Payment';
 import { Calculator } from './components/parcel/Calculator';
 import NotFound from './common/NotFound';
+import { Parcel } from './components/parcel/Parcel';
+import Map from './components/Map';
 const { Content, Footer } = Layout;
 
 function App({ auth }) {
@@ -33,9 +35,11 @@ function App({ auth }) {
 						<Route exact path="/" component={HomePage} />
 						<Route path="/auth/signin" component={SigninPage} />
 						<Route path="/auth/signup" component={SignupPage} />
-						<Route path="/parcel/create" component={CreateParcel} />
+						<Route path="/practice" component={Practice} />
+						<Route path="/map" component={Map} />
 						<Route path="/payment" component={Payment} />
 						<Route path="/users/:userId/dashboard" component={Dashboard} />
+						<Route path="/parcels/:parcelId" component={Parcel} />
 						<Route path="/calculate" component={Calculator} />
 						<Route path="/users/resetPassword" component={ResetPasswordPage} />
 						<Route path="/users/changePassword" component={CreatePasswordPage} />

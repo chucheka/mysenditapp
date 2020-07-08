@@ -23,7 +23,7 @@ export const nav = () => {
 			</div>
 			<ul className="menu">
 				<li>
-					<Link to="/">Home</Link>
+					<Link to="/calculate">Pricing</Link>
 				</li>
 				<li>
 					<button className="btn">

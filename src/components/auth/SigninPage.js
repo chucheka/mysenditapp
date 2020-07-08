@@ -6,15 +6,11 @@ import { UserOutlined, LockOutlined, LeftOutlined } from '@ant-design/icons';
 import { login } from '../../middlewares/auth';
 import Logo from '../../img/logo.png';
 import styled from './Signin.module.css';
+
 const SigninPage = ({ login, location, history, auth }) => {
 	const handleSubmit = (values) => {
-		login(values, location, history);
+		login(values, location, history, auth);
 	};
-
-	// const handleBack = () => {
-	// 	history.go(-1);
-	// };
-
 	return (
 		<Fragment>
 			<div className={styled.container}>
@@ -66,7 +62,7 @@ const SigninPage = ({ login, location, history, auth }) => {
 								<Button type="primary" loading={auth.isLoading} htmlType="submit">
 									Log in
 								</Button>{' '}
-								 Or <Link to="/users/ResetPassword">Forgotten Passwor?</Link>
+								Or <Link to="/users/ResetPassword">Forgotten Passwor?</Link>
 							</Form.Item>
 						</Form>
 					</div>

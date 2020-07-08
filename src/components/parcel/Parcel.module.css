@@ -1,0 +1,182 @@
+:root {
+	--text-header: #312f39;
+	--sub-background: #a6b3c8;
+	--background-color: #0936c5;
+	--btn: #1890ff;
+	--text-white: #eef2f6;
+	--text-white-mute: #7986ae;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.container {
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	background-color: var(--background-color);
+}
+.container .main {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 40px;
+}
+.container .main .nav {
+	display: flex;
+	height: 80px;
+	justify-content: space-between;
+	align-items: center;
+}
+.container .main .nav .logout {
+	width: 6rem;
+	background-color: #333;
+	padding: 4px 8px;
+	text-align: center;
+}
+.container .main .nav .logout:hover {
+	background-color: #eb002a;
+}
+.container .main .nav .logout a {
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.container .main .header {
+	display: flex;
+	width: 80%;
+	height: 100px;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0px auto;
+	color: var(--text-white);
+	font-size: 1rem;
+	font-weight: 500;
+}
+.container .main .header .info {
+	display: flex;
+}
+.container .main .header div img {
+	height: 40px;
+	width: 40px;
+	margin-right: 1rem;
+}
+.container .main .header .cost {
+	float: right;
+}
+.container .main .body {
+	display: flex;
+	flex-direction: column;
+}
+.container .main .body .map {
+	height: 400px;
+	width: 80%;
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 10px;
+	margin: 0px auto;
+}
+.container .main .body .location {
+	width: 40%;
+	height: 200px;
+	background-color: #eef2f6;
+	border-radius: 8px;
+	padding: 10px;
+	position: relative;
+	top: -40px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	margin: 0px auto;
+	padding: 20px 40px;
+	border: 1px solid transparent;
+}
+.container .main .body .status {
+	width: 80%;
+	height: 280px;
+	background: #fff;
+	border-radius: 8px;
+	margin: 0px auto;
+	padding: 40px;
+}
+.container .main .body .buttons {
+	width: 80%;
+	display: flex;
+	justify-content: flex-start;
+	margin: 20px auto;
+}
+.container .main .body .buttons button {
+	padding: 6px 12px;
+	border: none;
+	border-radius: 4px;
+	outline: none;
+}
+.container .main .body .buttons .first {
+	background: #eb002a;
+	color: #fff;
+	margin-right: 1rem;
+}
+.container .main .body .buttons button:hover {
+	color: var(--text-white);
+	background-color: #333;
+}
+.container .main .body .buttons .second {
+	background: var(--btn);
+	color: #fff;
+}
+.date {
+	display: inline-block;
+	margin-left: 20px;
+}
+@media screen and (max-width: 820px) {
+	.container .main .body .location {
+		width: 60%;
+		padding: 20px 40px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.container .main {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 560px) {
+	.container .main .body .map {
+		height: 320px;
+		width: 90%;
+	}
+	.container .main .body .status {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 490px) {
+	.container .main .body .location {
+		width: 60%;
+		padding: 10px 20px;
+	}
+	.date {
+		display: block;
+		margin-left: 0px;
+	}
+	.container .main .body .status {
+		padding: 20px;
+		height: 300px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.container .main .body .location {
+		width: 70%;
+		padding: 10px;
+	}
+	.container .main .body .buttons {
+		width: 90%;
+	}
+	.container .main .body .buttons button {
+		padding: 4px 6px;
+	}
+	.container .main .body .buttons .first {
+		margin-right: 8px;
+	}
+}

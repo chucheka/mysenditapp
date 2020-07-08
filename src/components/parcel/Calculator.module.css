@@ -45,3 +45,21 @@
 	color: var(--btn);
 	text-align: center;
 }
+@media screen and (max-width: 950px) {
+	.container .main {
+		width: 70%;
+	}
+}
+@media screen and (max-width: 600px) {
+	.container .main {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 490px) {
+	.container .main {
+		width: 94%;
+	}
+	.form {
+		padding: 20px;
+	}
+}

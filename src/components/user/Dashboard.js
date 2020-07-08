@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import styled from './Dashboard.module.css';
 import { Badge, Steps, Table, Popconfirm, message } from 'antd';
 import { DashboardOutlined } from '@ant-design/icons';
@@ -8,14 +8,19 @@ import Logo from '../../img/logo.png';
 import Package from '../../img/pkg.png';
 import Truck from '../../img/black-truck.png';
 import Bike from '../../img/motorbike.png';
+import { fetchUserParcels, cancelParcel } from '../../middlewares/parcel';
 
 const { Step } = Steps;
 
-export const Dashboard = () => {
+export const Dashboard = ({ parcelProps, auth, match, cancelParcel, history, fetchUserParcels }) => {
+	//Remove this after implementing automatic login
 	const [ name, setName ] = useState('Chike');
-	function confirm(e) {
-		message.success('Parcel Delivery cancelled');
-	}
+	const { userId } = match.params;
+
+	useEffect(() => {
+		// setName(auth.currentUser.username);
+		fetchUserParcels(userId);
+	}, []);
 
 	const columns = [
 		{
@@ -52,47 +57,26 @@ export const Dashboard = () => {
 		{
 			title: 'Action',
 			key: 'action',
-			render: () => (
+			render: ({ parcelId }) => (
 				<span>
 					<Popconfirm
-						title="Are you sure you want to cancel this order?"
-						onConfirm={confirm}
+						title="Are you sure you want to cancel delivery?"
+						onConfirm={() => alert(typeof parcelId)}
 						okText="Yes"
 						cancelText="No"
 						className={styled.cancel}
 					>
 						<a href="#">Cancel</a>
 					</Popconfirm>
-					<Link style={{ marginLeft: '16px' }}>View</Link>
+					<Link to={`/parcels/${parcelId}`} style={{ marginLeft: '16px' }}>
+						View
+					</Link>
 				</span>
 			)
 		}
 	];
-
-	const data = [
-		{
-			key: '1',
-			route: 'Lagos - Enugu',
-			parcelId: '12123',
-			status: 'Delivered',
-			courier: 'Truck'
-		},
-		{
-			key: '2',
-			route: 'Calabar - Edo',
-			parcelId: '12134',
-			status: 'In Transit',
-			courier: 'Rider'
-		},
-		{
-			key: '3',
-			route: 'Imo - Delta',
-			parcelId: '124253',
-			status: 'Cancelled',
-			courier: 'Truck'
-		}
-	];
-
+	const data = parcelProps.parcels;
+	let numDelivered = data.filter((d) => d.status == 'DELIVERED').length;
 	const trackParcel = (values) => {
 		console.log('Parcel Id:', values);
 	};
@@ -107,13 +91,15 @@ export const Dashboard = () => {
 						</Link>
 					</div>
 					<div className={styled.logout}>
-						<Link to="/parcel/create">logout</Link>
+						<Link to="/">logout</Link>
 					</div>
 				</div>
 				<div className={styled.showcase}>
 					<div className={styled.one}>
 						<div className={styled.text}>
-							<h2>Welcome to your dashboard,{name}.</h2>
+							<h2>
+								Welcome to your dashboard <em>{name}.</em>
+							</h2>
 							<span>Get to manage your parcel orders with ease</span>
 						</div>
 						<div className={styled.package}>
@@ -133,11 +119,11 @@ export const Dashboard = () => {
 							<span className={styled.badge}>{1}</span>{' '}
 						</div>
 						<div>
-							Deliveries <br /> <span className={styled.badge}>{12}</span>
+							Deliveries <br /> <span className={styled.badge}>{parcelProps.parcels.length}</span>
 						</div>
 						<div>
 							Recieved <br />
-							<span className={styled.badge}>{10}</span>{' '}
+							<span className={styled.badge}>{numDelivered}</span>{' '}
 						</div>
 					</div>
 				</div>
@@ -151,8 +137,11 @@ export const Dashboard = () => {
 	);
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+	parcelProps: state.parcelProps,
+	auth: state.auth
+});
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, { fetchUserParcels, cancelParcel })(withRouter(Dashboard));

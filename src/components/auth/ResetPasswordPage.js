@@ -1,78 +1,71 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
-import {withRouter } from 'react-router-dom';
-import { Form, Input, Button} from 'antd';
-import { MailOutlined, LeftOutlined } from '@ant-design/icons';
+import { Link, withRouter } from 'react-router-dom';
+import { Form, Input, Button, Checkbox, Row, Col, Typography, Layout, Space } from 'antd';
+import { MailOutlined } from '@ant-design/icons';
 import { resetPassword } from '../../middlewares/user';
-import Footer from '../../common/Footer';
-import './auth.css';
-const ResetPasswordPage = ({ resetPassword, location, history, auth }) => {
+import Logo from '../../img/logo.png';
+import styled from './Signin.module.css';
+const ResetPasswordPage = ({ resetPassword }) => {
 	const handleSubmit = (values) => {
 		resetPassword(values);
 	};
 
-	const handleBack = () => {
-		history.go(-1);
-	};
+	// const handleBack = () => {
+	// 	history.go(-1);
+	// };
+
 	return (
 		<Fragment>
-			<div className="sign-container">
-				<Button icon={<LeftOutlined />} className="back" onClick={handleBack}>
-					{' '}
-					Back
-				</Button>
-				<div className="form">
-					<div className="header">
-						<h1>Lost your password?</h1>
-						<span>
-							Supply us with the email address you registered with and we'll send you a link to reset your
-							password
-						</span>
-					</div>
-					<Form
-						name="normal_login"
-						className="login-form"
-						initialValues={{
-							remember: true
-						}}
-						onFinish={handleSubmit}
-						size="large"
-					>
-						<Form.Item
-							name="email"
-							rules={[
-								{
-									required: true,
-									message: 'Please enter your email'
-								}
-							]}
+			<div className={styled.container}>
+				<div className={styled.logo}>
+					<Link to="/">
+						<img src={Logo} />
+					</Link>
+				</div>
+				<div
+					className={styled.form}
+					style={{
+						height: '300px '
+					}}
+				>
+					<div className={styled.box}>
+						<h2>Enter email to get a link to reset password</h2>
+						<Form
+							initialValues={{
+								remember: true
+							}}
+							onFinish={handleSubmit}
+							size="large"
 						>
-							<Input
-								prefix={<MailOutlined className="site-form-item-icon" />}
-								placeholder="Enter email"
-							/>
-						</Form.Item>
-
-						<Form.Item>
-							<Button
-								type="primary"
-								loading={auth.isLoading}
-								htmlType="submit"
-								block
-								className="login-form-button"
+							<Form.Item
+								name="email"
+								rules={[
+									{
+										required: true,
+										message: 'Please input your email!'
+									}
+								]}
 							>
-								Send
-							</Button>
-						</Form.Item>
-					</Form>
+								<Input
+									prefix={<MailOutlined className="site-form-item-icon" />}
+									placeholder="Enter email"
+								/>
+							</Form.Item>
+							<Form.Item>
+								<Button type="primary" htmlType="submit">
+									Submit
+								</Button>
+							</Form.Item>
+						</Form>
+					</div>
 				</div>
 			</div>
-			<Footer />
 		</Fragment>
 	);
 };
 
-const mapStateToProps = (state) => ({
-	auth: state.auth
-});
-export default connect(mapStateToProps, { resetPassword })(withRouter(ResetPasswordPage));
+// const mapStateToProps = (state) => ({
+// 	auth: state.auth
+// });
+export default connect(null, { resetPassword })(withRouter(ResetPasswordPage));

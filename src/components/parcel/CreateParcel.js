@@ -5,15 +5,17 @@ import { connect } from 'react-redux';
 import { Form, Input, Button, Col, Row, Steps } from 'antd';
 import { UserOutlined, LockOutlined, LeftOutlined } from '@ant-design/icons';
 import Footer from '../../common/Footer';
+import { postParcel } from '../../middlewares/parcel';
 import './Parcel.css';
 const { Step } = Steps;
 
-export const CreateParcel = ({ history }) => {
+export const CreateParcel = ({ auth, parcel, postParcel }) => {
+	console.log(parcel, auth);
 	const handleSubmit = (values) => {
-		console.log(values);
+		postParcel(values);
 	};
 	const handleBack = () => {
-		history.go(-1);
+		// history.go(-1);
 	};
 
 	return (
@@ -65,14 +67,14 @@ export const CreateParcel = ({ history }) => {
 					<Form.Item name="pickup_contact">
 						<Input placeholder="pick-up contact" />
 					</Form.Item>
-					<Form.Item name="destination_address">
+					<Form.Item name="dest_address" rules={[ { required: true, message: 'Enter value for address!' } ]}>
 						<Input placeholder="Destination address" />
 					</Form.Item>
 					<Form.Item>
 						<Row gutter={8}>
 							<Col span={12}>
 								<Form.Item
-									name="destination_city"
+									name="dest_city"
 									noStyle
 									rules={[ { required: true, message: 'Enter value for city!' } ]}
 								>
@@ -81,7 +83,7 @@ export const CreateParcel = ({ history }) => {
 							</Col>
 							<Col span={12}>
 								<Form.Item
-									name="destination_state"
+									name="dest_state"
 									noStyle
 									rules={[ { required: true, message: 'Enter value for state!' } ]}
 								>
@@ -110,6 +112,7 @@ export const CreateParcel = ({ history }) => {
 								style={{
 									display: 'flex'
 								}}
+								parcel
 							>
 								<Form.Item
 									name="length"
@@ -160,9 +163,8 @@ export const CreateParcel = ({ history }) => {
 CreateParcel.propTypes = {
 	prop: PropTypes
 };
-
 const mapStateToProps = (state) => ({
-	parcel: state.parcel
+	parcel: state.parcel,
+	auth: state.auth
 });
-
-export default connect(mapStateToProps)(withRouter(CreateParcel));
+export default connect(mapStateToProps, { postParcel })(withRouter(CreateParcel));

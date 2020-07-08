@@ -8,10 +8,8 @@ import {
 	loginSuccess,
 	loginFailure
 } from '../actions/userActions';
-import { localeData } from 'moment';
 
-export function login(loginRequest, location, history) {
-	const { from } = location.state || { from: { pathname: '/user/dashboard' } };
+export function login(loginRequest, location, history, auth) {
 	return (dispatch) => {
 		dispatch(loginUserLoading());
 
@@ -31,21 +29,26 @@ export function login(loginRequest, location, history) {
 					dispatch(loginFailure(data));
 					history.push('/auth/signin');
 				} else {
-					const { accessToken, username, email, roles } = data;
+					const { accessToken, username, email, roles, id } = data;
+					let userId = id;
 					let currentUser = {
+						userId,
 						username,
 						email,
 						roles
 					};
+					dispatch(loginSuccess(currentUser));
 					success('Successfully Logged In');
 					localStorage.setItem('ACCESS_TOKEN', accessToken);
-					dispatch(loginSuccess(currentUser));
+					const { from } = location.state || {
+						from: { pathname: `/users/${userId}/dashboard` }
+					};
 					history.push(`${from.pathname}`);
 				}
 			})
 			.catch((err) => {
-				error('Connection error');
-				dispatch(loginFailure('Connection error'));
+				// error('Connection error');
+				// dispatch(loginFailure('Connection error'));
 			});
 	};
 }
